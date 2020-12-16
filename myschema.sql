@@ -1,0 +1,25 @@
+DROP TABLE IF EXISTS clothes;
+DROP TABLE IF EXISTS salesplatform;
+
+CREATE TABLE clothes (
+  goodsID INTEGER PRIMARY KEY AUTOINCREMENT, NOT NULL,
+  class VARCHAR(80) NOT NULL,
+  color VARCHAR(80) NOT NULL,
+  launchingby VARCHAR(80) NOT NULL,
+  price INTEGER,
+  platform VARCHAR(80) NOT NULL,
+  FOREIGN KEY(platform) REFERENCES salesplatform(pName),
+  FOREIGN KEY(launchingby) REFERENCES brand(bName)
+);
+
+CREATE TABLE salesplatform (
+  pName VARCHAR(80) PRIMARY KEY AUTOINCREMENT, NOT NULL,
+  event VARCHAR(80),
+  salesrank INTEGER 
+);
+
+CREATE TABLE brand (
+  bName VARCHAR(80) PRIMARY KEY AUTOINCREMENT, NOT NULL,
+  location VARCHAR(80),
+  scale INTEGER 
+);

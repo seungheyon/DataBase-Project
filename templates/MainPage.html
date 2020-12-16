@@ -1,0 +1,31 @@
+<!doctype HTML>
+<html>
+    <head>
+        <style>
+            .log_in {
+                text-align: center;
+            }
+            .link{
+                text-align: center;
+                border: 3px, solid black;
+                margin: 6000px, auto;
+            }
+        </style>
+    </head>
+    <body>
+        
+       
+        <div class="log_in">
+        <h1>My EyeShopping Manager</h1>
+        <form>
+            administrator <input type="password" placeholder="관리자 비밀번호" />
+            <button type="submit">log in</button>
+        </form>
+        <br><br><br>
+        </div>
+        <div class="link">
+        <a href="{{url_for('showplatform', platform=None)}}">SalesPlatform</a><br><br>
+        <a href="{{url_for('showbrand', brand=None)}}">Brand</a>
+        </div>
+    </body>
+</html>

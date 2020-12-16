@@ -1,0 +1,40 @@
+<!doctype HTML>
+<html>
+    <head>
+        <style>                       
+            .searchbox{
+                text-align: center;
+                border: 3px, solid black;
+                margin: 3000px, auto;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="searchbox">
+        <h1>Search Page</h1>
+        <select name="class">
+            <option value="class">class</option>
+            <option value="outer">outer</option>
+            <option value="top">top</option>
+            <option value="bottom">bottom</option>
+            <option value="shoes">shoes</option>
+            <option value="acc">acc</option>
+        </select>  
+        <select name="clolor">
+            <option value="clolor">clolor</option>
+            <option value="black">black</option>
+            <option value="red">red</option>
+            <option value="blue">blue</option>
+            <option value="denim">denim</option>
+            <option value="white">white</option>
+            <option value="gold">gold</option>
+        </select>
+        <br><br>
+                
+        <form action="{{url_for('searchgoods')}}" method="POST">
+            <input type="text" placeholder="검색" />
+            <button type="submit">Search</button>
+        </form>
+        <br><br>
+    </body>
+</html>
