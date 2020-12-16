@@ -31,7 +31,7 @@
         </select>
         <br><br>
                 
-        <form action="{{url_for('searchgoods')}}" method="POST">
+        <form action="{{url_for('searchresults', argclass = class, argcolor = color)}}" method="GET">
             <input type="text" placeholder="검색" />
             <button type="submit">Search</button>
         </form>

@@ -1,0 +1,13 @@
+<!doctype HTML>
+<html>
+    <body>
+        <h1>Search Results</h1>
+        {% for item in items %}
+        Goods ID : {{ item.goodsID }} <br>
+        Class : {{ item.class }} <br>
+        Color : {{ item.color }} <br>
+        Launched by : {{ item.launchingby }} <br> 
+        Price : {{ item.price }} <br><br>     
+        {% endfor %}
+    </body>
+</html>

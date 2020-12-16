@@ -38,14 +38,22 @@ def showplatform(platform=None):
 
 @app.route('/goods', methods = ['GET', 'POST'])
 def searchgoods(items=None):
+   
+    return render_template('searchgoods.html')
+
+
+@app.route('/results/<string:argclass>/<string:argcolor>/', methods = ['GET', 'POST'])
+def searchresults(argclass, argcolor):
     db = sqlite3.connect('mydatabase.db')
     db.row_factory =  sqlite3.Row
-   # items = db.execute(
-        #'select pName, event, salesrank from salesplatform'
-    #).fetchall()
+    items = db.execute(
+        'select goodsID, class, color, launchingby, price'
+        'from clothes'
+        'where class=?' (argclass)
+    ).fetchall()
 
-    db.close()    
-    return render_template('searchgoods.html')
+    db.close() 
+    return render_template('searchresults.html', items = items)    
 
 
 
